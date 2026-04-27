@@ -1,0 +1,20 @@
+:root {
+  /* Identidad Visual ETB */
+  --etb-blue: #004c8f;
+  --etb-cyan: #00ffff;
+  --etb-bg: #f4f7fb;
+  
+  /* Colores de Badges (según RF-04) */
+  --bg-abierto: #E6F1FB;    --text-abierto: #185FA5;
+  --bg-progreso: #FAEEDA;   --text-progreso: #854F0B;
+  --bg-cerrado: #EAF3DE;    --text-cerrado: #3B6D11;
+
+  --font-main: 'Lexend', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--etb-bg);
+  margin: 0;
+  color: #333;
+}
