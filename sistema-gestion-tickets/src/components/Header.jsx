@@ -1,27 +1,12 @@
-import React from 'react';
-
-const Header = () => {
-  return (
-    <header style={{
-      backgroundColor: '#004c8f', // Fondo azul ETB
-      padding: '20px 0',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-    }}>
-      <h1 style={{
-        color: '#00ffff',      // Texto cian ETB
-        fontFamily: "'Lexend', sans-serif",
-        fontWeight: 800,       // ExtraBold
-        margin: 0,
-        fontSize: '2.5rem',
-        letterSpacing: '-1px'
-      }}>
-        eTb
-      </h1>
-    </header>
-  );
-};
-
+const Header = () => (
+  <header style={{ 
+    backgroundColor: 'var(--etb-blue)', 
+    height: 'var(--header-height)',
+    width: '100%', position: 'fixed', top: 0, z_index: 1000,
+    display: 'flex', justifyContent: 'center', alignItems: 'center',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.1)'
+  }}>
+    <h1 style={{ color: 'var(--etb-cyan)', fontWeight: 800, fontSize: '2.2rem', margin: 0 }}>eTb</h1>
+  </header>
+);
 export default Header;

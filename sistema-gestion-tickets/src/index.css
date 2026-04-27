@@ -1,20 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap');
+
 :root {
-  /* Identidad Visual ETB */
   --etb-blue: #004c8f;
   --etb-cyan: #00ffff;
   --etb-bg: #f4f7fb;
+  --header-height: 80px;
   
-  /* Colores de Badges (según RF-04) */
+  /* Colores Badges RF-04 */
   --bg-abierto: #E6F1FB;    --text-abierto: #185FA5;
   --bg-progreso: #FAEEDA;   --text-progreso: #854F0B;
   --bg-cerrado: #EAF3DE;    --text-cerrado: #3B6D11;
-
-  --font-main: 'Lexend', sans-serif;
 }
 
+* { box-sizing: border-box; }
+
 body {
-  font-family: var(--font-main);
+  font-family: 'Lexend', sans-serif;
   background-color: var(--etb-bg);
   margin: 0;
-  color: #333;
+  color: #1a1a1a;
+}
+
+/* Layout Dashboard */
+.app-container {
+  max-width: 1200px;
+  margin: var(--header-height) auto 0;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Filtros Profesionales */
+.filters-container {
+  position: sticky;
+  top: 100px; /* Debajo del header fijo */
+  background-color: var(--etb-bg);
+  padding: 10px 0 20px 0;
+  z-index: 10;
+  display: flex;
+  gap: 12px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filters-container::-webkit-scrollbar { display: none; }
+
+/* Centrado del Spinner RF-01 */
+.tickets-loading-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 400px;
+  color: var(--etb-blue);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 76, 143, 0.1);
+  border-left-color: var(--etb-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 900px) {
+  .app-container { grid-template-columns: 1fr; margin-top: 100px; }
 }
