@@ -1,0 +1,67 @@
+{
+  "tickets": [
+    {
+      "id": 1,
+      "nombre": "Carlos Ramírez",
+      "descripcion": "El servicio de internet presenta intermitencia desde hace 3 días",
+      "estado": "abierto",
+      "fecha": "2025-04-18"
+    },
+    {
+      "id": 2,
+      "nombre": "Luisa Fernández",
+      "descripcion": "Error al acceder al portal de autogestión con usuario y contraseña correctos",
+      "estado": "en_progreso",
+      "fecha": "2025-04-17"
+    },
+    {
+      "id": 3,
+      "nombre": "Jorge Medina",
+      "descripcion": "Factura de marzo con cobros que no corresponden al plan contratado",
+      "estado": "cerrado",
+      "fecha": "2025-04-10"
+    },
+    {
+      "id": 4,
+      "nombre": "Paola Suárez",
+      "descripcion": "No llega el correo de confirmación de activación del servicio de fibra óptica",
+      "estado": "abierto",
+      "fecha": "2025-04-19"
+    },
+    {
+      "id": 5,
+      "nombre": "Andrés Morales",
+      "descripcion": "Velocidad del internet muy por debajo del plan contratado de 200 Mb",
+      "estado": "en_progreso",
+      "fecha": "2025-04-16"
+    },
+    {
+      "id": 6,
+      "nombre": "Marcela Ospina",
+      "descripcion": "Solicitud de cambio de plan de 100 Mb a 500 Mb según promoción vigente",
+      "estado": "cerrado",
+      "fecha": "2025-04-08"
+    },
+    {
+      "id": 7,
+      "nombre": "Felipe Castro",
+      "descripcion": "El decodificador de televisión no enciende después de la tormenta eléctrica",
+      "estado": "abierto",
+      "fecha": "2025-04-20"
+    },
+    {
+      "nombre": "Lina Wilches",
+      "descripcion": "Cancelación de plan movil",
+      "estado": "en_progreso",
+      "fecha": "2026-04-27",
+      "id": 8
+    },
+    {
+      "nombre": "Carlos Ramírez",
+      "descripcion": "El servicio de internet presenta intermitencia desde hace 3 días",
+      "estado": "cerrado",
+      "fecha": "2026-04-27",
+      "id": 9
+    }
+  ]
+}

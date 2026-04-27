@@ -1,0 +1,11 @@
+{
+  "name": "mock-api-modelo-a",
+  "version": "1.0.0",
+  "description": "Mock API - Sistema de Tickets de Soporte ETB",
+  "scripts": {
+    "start": "json-server --watch db.json --port 3001"
+  },
+  "dependencies": {
+    "json-server": "0.17.4"
+  }
+}
