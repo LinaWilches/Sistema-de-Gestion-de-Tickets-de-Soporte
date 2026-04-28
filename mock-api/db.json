@@ -51,17 +51,10 @@
     },
     {
       "nombre": "Lina Wilches",
-      "descripcion": "Cancelación de plan movil",
-      "estado": "en_progreso",
-      "fecha": "2026-04-27",
+      "descripcion": "Falla",
+      "estado": "abierto",
+      "fecha": "2026-04-28",
       "id": 8
-    },
-    {
-      "nombre": "Carlos Ramírez",
-      "descripcion": "El servicio de internet presenta intermitencia desde hace 3 días",
-      "estado": "cerrado",
-      "fecha": "2026-04-27",
-      "id": 9
     }
   ]
 }

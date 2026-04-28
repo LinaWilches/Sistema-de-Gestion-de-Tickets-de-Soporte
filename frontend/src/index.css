@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap');
+
+:root {
+  --etb-blue: #004c8f;
+  --etb-cyan: #00ffff;
+  --etb-bg: #f4f7fb;
+  --header-height: 80px;
+  
+  /* Colores Badges RF-04 */
+  --bg-abierto: #E6F1FB;    --text-abierto: #185FA5;
+  --bg-progreso: #FAEEDA;   --text-progreso: #854F0B;
+  --bg-cerrado: #EAF3DE;    --text-cerrado: #3B6D11;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Lexend', sans-serif;
+  background-color: var(--etb-bg);
+  margin: 0;
+  color: #1a1a1a;
+}
+
+/* Layout Dashboard */
+.app-container {
+  max-width: 1200px;
+  margin: var(--header-height) auto 0;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  align-items: start;
+  /* La altura del grid = viewport menos header y padding */
+  height: calc(100vh - var(--header-height) - 80px);
+}
+
+/* La sección derecha (filtros + cards) ocupa toda la altura disponible */
+.list-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* El formulario es sticky solo en desktop */
+.ticket-form-aside {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+  max-height: calc(100vh - var(--header-height) - 80px);
+  overflow-y: auto;
+}
+
+/* Filtros — estáticos, no scrollean */
+.filters-container {
+  flex-shrink: 0;                 /* No se encoge nunca */
+  background-color: var(--etb-bg);
+  padding: 10px 0 16px 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filters-container::-webkit-scrollbar { display: none; }
+
+/* Solo las cards hacen scroll */
+.tickets-grid {
+  flex: 1;                        /* Ocupa el espacio restante */
+  overflow-y: auto;
+  padding-right: 4px;             /* Evita que el scrollbar tape contenido */
+  scrollbar-width: thin;
+  scrollbar-color: #D0D7DE transparent;
+}
+
+.tickets-grid::-webkit-scrollbar { width: 6px; }
+.tickets-grid::-webkit-scrollbar-track { background: transparent; }
+.tickets-grid::-webkit-scrollbar-thumb { background-color: #D0D7DE; border-radius: 10px; }
+
+/* Centrado del Spinner RF-01 */
+.tickets-loading-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 400px;
+  color: var(--etb-blue);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 76, 143, 0.1);
+  border-left-color: var(--etb-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── Responsive Breakpoints ─────────────────────────────────────── */
+
+/* Tablet (≤ 900px) */
+@media (max-width: 900px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    margin-top: 100px;
+    padding: 24px 16px;
+    gap: 20px;
+    height: auto;                  /* En tablet/móvil fluye normal */
+  }
+
+  /* El formulario deja de ser sticky en móvil/tablet */
+  .ticket-form-aside {
+    position: static;
+  }
+
+  /* La sección de la lista ya no necesita altura fija en móvil */
+  .list-section {
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Las cards tampoco necesitan scroll propio en móvil */
+  .tickets-grid {
+    overflow-y: visible;
+    flex: none;
+  }
+
+  .filters-container {
+    gap: 8px;
+  }
+}
+
+/* Tablet pequeña / Móvil grande (≤ 640px) */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  .app-container {
+    margin-top: 70px;
+    padding: 16px 12px;
+    gap: 16px;
+  }
+
+  .filters-container {
+    top: 70px;
+    gap: 8px;
+    padding: 8px 0 14px 0;
+  }
+
+  .tickets-loading-zone {
+    min-height: 260px;
+  }
+}
+
+/* Móvil (≤ 480px) */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 12px 10px;
+  }
+
+  .filters-container {
+    gap: 6px;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+  }
+}

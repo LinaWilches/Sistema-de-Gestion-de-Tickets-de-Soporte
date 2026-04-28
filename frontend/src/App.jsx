@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Mapeo para mostrar nombres amigables en los filtros (RF-01/RF-04)
+  // Mapeo para mostrar nombres en los filtros
   const nombresFiltros = {
     'Todos': 'Todos',
     'abierto': 'Abierto',
@@ -17,7 +17,7 @@ function App() {
     'cerrado': 'Cerrado'
   };
 
-  // Carga inicial de datos desde la API Mock (RF-01)
+  // Carga inicial de datos desde la API Mock
   useEffect(() => {
     fetch('http://localhost:3001/tickets')
       .then(res => {
@@ -29,23 +29,23 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
 
-  // Filtrado dinámico en el cliente (RF-01)
+  // Filtrado dinámico en el cliente
   const filtrados = tickets.filter(t => filtro === 'Todos' || t.estado === filtro);
 
-  // Función para agregar el nuevo ticket a la lista localmente (RF-02)
+  // Función para agregar el nuevo ticket a la lista localmente
   const handleTicketCreated = (nuevoTicket) => {
-    setTickets(prev => [...prev, nuevoTicket]);
+    setTickets(prevTickets => [nuevoTicket, ...prevTickets]);
   };
 
   return (
     <>
       <Header />
       <main className="app-container">
-        {/* Formulario de creación (RF-02) */}
+        {/* Formulario de creación */}
         <TicketForm onTicketCreated={handleTicketCreated} />
 
         <section className="list-section">
-          {/* Contenedor de Filtros con Conteo Dinámico (RF-01) */}
+          {/* Contenedor de Filtros con Conteo Dinámico */}
           <div className="filters-container">
             {['Todos', 'abierto', 'en_progreso', 'cerrado'].map(f => {
               const conteo = tickets.filter(t => f === 'Todos' || t.estado === f).length;
@@ -59,7 +59,7 @@ function App() {
                     fontWeight: 600,
                     cursor: 'pointer',
                     transition: 'all 0.2s',
-                    // Estilos de identidad visual ETB para filtros (RF-04)
+                    // Estilos de identidad visual ETB para filtros
                     backgroundColor: filtro === f ? 'var(--etb-blue)' : 'white',
                     color: filtro === f ? 'white' : '#718096',
                     border: filtro === f ? 'none' : '1px solid #D0D7DE'

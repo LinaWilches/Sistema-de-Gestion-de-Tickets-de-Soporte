@@ -10,12 +10,12 @@ const TicketCard = ({ ticket }) => {
       backgroundColor: 'white', border: '1px solid #D0D7DE', borderRadius: '12px', 
       padding: '24px', marginBottom: '16px', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' 
     }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <h3 style={{ margin: 0, fontSize: '1.2rem', color: '#1a1a1a' }}>{ticket.nombre}</h3>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '8px' }}>
+        <h3 style={{ margin: 0, fontSize: 'clamp(1rem, 3vw, 1.2rem)', color: '#1a1a1a', flex: '1 1 auto', minWidth: 0 }}>{ticket.nombre}</h3>
         <span style={{ 
           backgroundColor: badgeStyles.bg, color: badgeStyles.tx, 
           padding: '6px 14px', borderRadius: '8px', fontSize: '0.75rem', 
-          fontWeight: 800, textTransform: 'uppercase' 
+          fontWeight: 800, textTransform: 'uppercase', flexShrink: 0
         }}>
           {ticket.estado.replace('_', ' ')}
         </span>
