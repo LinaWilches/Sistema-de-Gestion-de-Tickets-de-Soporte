@@ -59,7 +59,7 @@ function App() {
                     fontWeight: 600,
                     cursor: 'pointer',
                     transition: 'all 0.2s',
-                    // Estilos de identidad visual ETB para filtros
+                    // Estilos para filtros
                     backgroundColor: filtro === f ? 'var(--etb-blue)' : 'white',
                     color: filtro === f ? 'white' : '#718096',
                     border: filtro === f ? 'none' : '1px solid #D0D7DE'
@@ -71,7 +71,7 @@ function App() {
             })}
           </div>
 
-          {/* Zona de contenido con Spinner centrado o Listado (RF-01) */}
+          {/* Zona de contenido con Spinner centrado o Listado */}
           {loading ? (
             <div className="tickets-loading-zone">
               <div className="spinner"></div>
